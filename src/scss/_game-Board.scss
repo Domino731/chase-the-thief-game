@@ -12,3 +12,15 @@
     border-left: 1px solid #bcbcbc;
   }
 }
+
+.hero, .thief{
+  background-position: center;
+  background-size: contain;
+}
+.hero{
+  background-image: url("../../dist/assets/images/superhero.png");
+}
+.thief{
+  background-image: url("../../dist/assets/images/thief.png");
+}
+
