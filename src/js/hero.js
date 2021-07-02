@@ -5,6 +5,7 @@ export class Hero{
             x: 0,
             y: 0
         }
-        this.direction = 0
+        // direction on which hero will be moving, at start it will be right
+        this.direction = "right"
     }
 }
