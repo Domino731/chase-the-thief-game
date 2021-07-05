@@ -1,0 +1,17 @@
+@media (max-width: 900px) {
+  :root {
+    font-size: 12px;
+  }
+  .game-menu {
+    width: 362px;
+  }
+  .menu__startBtn {
+    margin: 21px auto;
+  }
+  .game-board {
+    grid-template-columns: repeat(10, 45px);
+    grid-template-rows: repeat(10, 45px);
+    width: 450px;
+    height: 450px;
+  }
+}

@@ -1,0 +1,44 @@
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(10, 64px);
+  grid-template-rows: repeat(10, 64px);
+  border-bottom: 4px solid $color-black;
+  border-right: 4px solid $color-black;
+  width: 640px;
+  height: 640px;
+  margin: 0 auto;
+  overflow: hidden;
+
+  & > div {
+    border-top: 4px solid $color-black;
+    border-left: 4px solid $color-black;
+    z-index: -3;
+  }
+}
+
+.hero, .thief {
+  background-position: center;
+  background-size: contain;
+}
+
+.hero {
+  background-image: url("../../../dist/assets/images/superhero.png");
+}
+
+.thief {
+  background-image: url("../../../dist/assets/images/thief.png");
+}
+
+.gameOver {
+  border: none;
+  animation: gameover 0.5s forwards;
+}
+
+
+
+@keyframes gameover {
+  100% {
+    background: $color-red;
+  }
+}
+

@@ -1,0 +1,35 @@
+@media (max-width: 360px){
+  :root{
+    font-size: 10px;
+  }
+  .game-board {
+    grid-template-columns: repeat(10, 34px);
+    grid-template-rows: repeat(10, 34px);
+    width: 343px;
+    height: 343px;
+  }
+  .game-board {
+    border-bottom: 2px solid $color-black;
+    border-right: 2px solid $color-black;
+  }
+  .game-board > div {
+    border-top: 2px solid $color-black;
+    border-left: 2px solid $color-black;
+
+  }
+  .menu__score strong {
+    margin-top: 2px;
+  }
+  .menu__score {
+    margin: 16px auto;
+  }
+  .menu__title {
+    width: 260px;
+  }
+  .game-board {
+    grid-template-columns: repeat(10, 30px);
+    grid-template-rows: repeat(10, 30px);
+    width: 302px;
+    height: 302px;
+  }
+}

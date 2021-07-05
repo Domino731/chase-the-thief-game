@@ -1,4 +1,12 @@
-@import "_general";
-@import "_reset";
-@import "_game-Board";
-@import "_game-menu";
+@import "general/variables";
+@import "general/general";
+@import "general/reset";
+@import "elements/game-Board";
+@import "elements/game-menu";
+
+@import "media/1200px";
+@import "media/900px";
+@import "media/825px";
+@import "media/768px";
+@import "media/420px";
+@import "media/360px";

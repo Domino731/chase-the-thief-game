@@ -1,0 +1,20 @@
+@media (max-width: 420px){
+  :root{
+    font-size: 11px;
+  }
+  .game-board {
+    grid-template-columns: repeat(10, 34px);
+    grid-template-rows: repeat(10, 34px);
+    width: 343px;
+    height: 343px;
+  }
+  .game-board {
+    border-bottom: 3px solid $color-black;
+    border-right: 3px solid $color-black;
+  }
+  .game-board > div {
+    border-top: 3px solid $color-black;
+    border-left: 3px solid $color-black;
+
+  }
+}

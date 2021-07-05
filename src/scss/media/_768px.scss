@@ -1,0 +1,28 @@
+@media (max-width: 768px) {
+  body {
+    flex-direction: column-reverse;
+  }
+  .game-menu {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+  .menu__scoreBoard{
+    width: 400px;
+  }
+  .menu__title {
+    font-size: 3.333rem;
+    width: 287px;
+  }
+  .menu__startBtn {
+    margin: 0;
+    z-index: 3;
+  }
+  .game-board{
+    margin: 25px;
+  }
+}
