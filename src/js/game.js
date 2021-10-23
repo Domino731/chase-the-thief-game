@@ -5,7 +5,7 @@ import {displayingScore} from "./score";
 // class game, which is contains hero, thief, actual score and methods responsible for game management
 // constructor //
 // difficultyLevel --> changing the time in the interval and  changing the difficulty of the game
-class Game {
+export class Game {
     constructor(difficultyLevel) {
         // the field on which hero moves
         this.pole = document.querySelectorAll("#game-board div")
@@ -250,7 +250,7 @@ class Game {
 
 
 // starting new game by clicking new game button
-const gameInit = () => {
+export const gameInit = () => {
 
     let difficultyLevel = 250
     // chose difficulty level
@@ -295,7 +295,4 @@ const gameInit = () => {
 }
 
 
-window.addEventListener('DOMContentLoaded', () => {
-    gameInit()
-    displayingScore()
-});
+

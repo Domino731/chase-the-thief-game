@@ -1,177 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chase the thief</title>
-    <link rel="stylesheet" href="dist/app.css">
+    <link rel="stylesheet" href="dist/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tourney&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tourney&family=Ubuntu:ital,wght@0,700;1,400&display=swap"
-          rel="stylesheet">
+        rel="stylesheet">
     <script src="https://kit.fontawesome.com/17383ce736.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
-<section class="game-menu">
-    <h1 class="menu__title">
-        <span>Chase</span>
-        <span>The</span>
-        <span>Thief</span>
-    </h1>
-    <a class="menu__startBtn disable" id="newGame-btn" href="#game-board">
-        New game
-    </a>
+    <section class="game-menu">
+        <h1 class="menu__title">
+            <span>Chase</span>
+            <span>The</span>
+            <span>Thief</span>
+        </h1>
+        <a class="menu__startBtn disable" id="newGame-btn" href="#game-board">
+            New game
+        </a>
 
-    <div class="menu__score">
-        <h2>Score</h2>
-        <strong id="score">0</strong>
-    </div>
-
-    <form class="form" id="difficulty-form">
-
-        <div class="checkboxDifficulty">
-            <input id="difficulty-easy" name="radio" type="radio" data-defficulty="250" checked/>
-            <label for="difficulty-easy">Easy</label>
+        <div class="menu__score">
+            <h2>Score</h2>
+            <strong id="score">0</strong>
         </div>
 
-        <div class="checkboxDifficulty">
-            <input id="difficulty-normal" name="radio" type="radio" data-defficulty="150"/>
-            <label for="difficulty-normal">Normal</label>
+        <form class="form" id="difficulty-form">
+
+            <div class="checkboxDifficulty">
+                <input id="difficulty-easy" name="radio" type="radio" data-defficulty="250" checked />
+                <label for="difficulty-easy">Easy</label>
+            </div>
+
+            <div class="checkboxDifficulty">
+                <input id="difficulty-normal" name="radio" type="radio" data-defficulty="150" />
+                <label for="difficulty-normal">Normal</label>
+            </div>
+
+            <div class="checkboxDifficulty">
+                <input id="difficulty-hard" name="radio" type="radio" data-defficulty="80" />
+                <label for="difficulty-hard">hard</label>
+            </div>
+        </form>
+
+
+
+        <div class="menu__scoreBoard">
+            <div class="board__element">
+                <h3 class="board__title">Previous score</h3>
+                <strong class="board__score" id="score--previous">0</strong>
+            </div>
+            <div class="board__element">
+                <h3 class="board__title">Highest score</h3>
+                <strong class="board__score" id="score--highest">0</strong>
+            </div>
         </div>
 
-        <div class="checkboxDifficulty">
-            <input id="difficulty-hard" name="radio" type="radio" data-defficulty="80"/>
-            <label for="difficulty-hard">hard</label>
+        <div class="menu__iconAuthors">
+            <div>Icons made by <a href="https://www.flaticon.com/authors/surang" title="surang">surang</a> from <a
+                    href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+            <div>Icons made by <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> from <a
+                    href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
         </div>
-    </form>
 
-
-
-    <div class="menu__scoreBoard">
-        <div class="board__element">
-            <h3 class="board__title">Previous score</h3>
-            <strong class="board__score" id="score--previous">0</strong>
+        <div class='menu__freepik'>
+            <a href='https://www.freepik.com/vectors/background'>Background vector created by katemangostar - www.freepik.com</a>
         </div>
-        <div class="board__element">
-            <h3 class="board__title">Highest score</h3>
-            <strong class="board__score" id="score--highest">0</strong>
-        </div>
-    </div>
-
-    <div class="menu__iconAuthors">
-        <div>Icons made by <a href="https://www.flaticon.com/authors/surang" title="surang">surang</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-        <div>Icons made by <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div></div>
-</section>
+    </section>
 
 
-<section class="game-board" id="game-board">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-</section>
+    <section class="game-board" id="game-board">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
 
-<span id="gameFocus"></span>
-<script src="dist/app.js"></script>
+    <span id="gameFocus"></span>
+    <script src="dist/index.js"></script>
 </body>
+
 </html>

@@ -1,11 +1,11 @@
-// displaying scores form localStorage
+/** displaying scores form localStorage */
 export const displayingScore = () => {
-    const high = document.querySelector("#score--highest")
-    const prev = document.querySelector("#score--previous")
+    const high = document.querySelector("#score--highest");
+    const prev = document.querySelector("#score--previous");
     if (localStorage.getItem("prevScore") !== null) {
-        prev.innerText = localStorage.getItem("prevScore")
+        prev.innerText = localStorage.getItem("prevScore");
     }
     if (localStorage.getItem("highScore") !== null) {
-        high.innerText = localStorage.getItem("highScore")
+        high.innerText = localStorage.getItem("highScore");
     }
 }
