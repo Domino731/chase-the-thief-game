@@ -1,4 +1,4 @@
-@media (max-width: 420px){
+@media screen and (max-width: 420px){
   :root{
     font-size: 11px;
   }
@@ -9,12 +9,15 @@
     height: 343px;
   }
   .game-board {
+    margin-top: 10px;
     border-bottom: 3px solid $color-black;
     border-right: 3px solid $color-black;
   }
   .game-board > div {
     border-top: 3px solid $color-black;
     border-left: 3px solid $color-black;
-
+  }
+  .game__container{
+    min-height: 370px;
   }
 }

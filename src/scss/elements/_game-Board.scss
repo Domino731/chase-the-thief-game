@@ -18,7 +18,18 @@
     z-index: -3;
   }
 }
-
+.game__container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  overflow: auto;
+  @media screen and (max-height: 656px) {
+    padding: 20px 0;
+    align-items: flex-start;
+  }
+}
 .hero, .thief {
   background-position: center;
   background-size: contain;
