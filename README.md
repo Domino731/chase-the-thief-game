@@ -5,7 +5,11 @@ A simple game created in JavaScript. The user must catch the thief and at the sa
 * Hard level -  moving hero by each 80ms
 
 This game has also opportunity to save user's score into local storage. User can move hero by using keyboard arrows (`turnHero` method in `Game` class) and by finger swipe on touch screen devices  (`mobileMove` in `Game` class).
-
+## Technology
+* Webpack
+* HTML
+* JavaScript
+* Sass
 ## How it works ?
 When the user clicks on a button in the menu, a new object `Game` is created with selected difficulty level. Countdown starts and after 3s game starts.
 * 1 - `clearPrevious()` method removes the previous score in menu
