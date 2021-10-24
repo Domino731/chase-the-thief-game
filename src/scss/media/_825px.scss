@@ -7,10 +7,9 @@
   }
   .menu__startBtn {
     margin: 21px auto;
+    padding: 10px 0;
   }
-  .menu__title{
-    font-size: 3.667rem;
-  }
+
   .game-board {
     grid-template-columns: repeat(10, 40px);
     grid-template-rows: repeat(10, 40px);

@@ -1,11 +1,12 @@
-// class for a hero, which is contains start position and actual direction
-export class Hero{
+/** class for a hero, which is contains start position and actual direction */
+export class Hero {
     constructor() {
+        /** hero position (in vertical and horizontal) */
         this.position = {
             x: 0,
             y: 0
         }
-        // direction on which hero will be moving, at start it will be right
-        this.direction = "right"
+        /** direction on which hero will be moving, at start it will be right */
+        this.direction = "right";
     }
 }

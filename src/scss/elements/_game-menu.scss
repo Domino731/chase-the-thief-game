@@ -16,26 +16,20 @@
 }
 
 .menu {
-
   &__title {
 
-    font-size: 4.5rem;
+    font-size: 56px;
     font-family: $font-title;
     color: $color-yellow;
     text-transform: uppercase;
     letter-spacing: 0.125rem;
     text-shadow: 0 0 2px $color-yellow;
-    transform: rotate(-18deg);
     margin-left: 23px;
     display: flex;
     flex-direction: column;
-
-    span:nth-child(2) {
-      margin-left: 10rem;
-    }
-
-    span:last-child {
-      margin-left: 13.875rem;
+    text-align: center;
+    @media screen and (max-width: 1439px) {
+      font-size: 41px;
     }
   }
 
