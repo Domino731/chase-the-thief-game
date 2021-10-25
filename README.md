@@ -5,6 +5,7 @@ A simple game created in JavaScript. The user must catch the thief and at the sa
 * Hard level -  moving hero by each 80ms
 
 This game has also opportunity to save user's score into local storage. User can move hero by using keyboard arrows (`turnHero` method in `Game` class) and by finger swipe on touch screen devices  (`mobileMove` in `Game` class).
+Available at https://friendly-lumiere-626c26.netlify.app/
 ## Technology
 * Webpack
 * HTML
