@@ -249,28 +249,6 @@ export class Game {
         this.elements.btn.style.display = "none"
     }
 
-    mobile() {
-        // needed to toggle content on mobile devices
-        const menuContainer = document.querySelector('.game-menu');
-        const gameContainer = document.querySelector('.game-menu');
-
-        window.addEventListener('resize', () => {
-            // end current game
-
-            // on mobile devices hide game board container, show only menu
-            if (window.innerWidth < 768) {
-
-                gameContainer.classList.add('disabled');
-                menuContainer.classList.remove('disabled');
-            }
-
-            // show both of them on larger devices
-            else {
-                gameContainer.classList.remove('disabled');
-                menuContainer.classList.remove('disabled');
-            }
-        });
-    }
     /**  initialization of game */
     init() {
         this.clearPrevious();
@@ -280,7 +258,6 @@ export class Game {
         this.showThief();
         this.turnHero();
         this.mobileMove();
-        this.mobile();
     }
 }
 
@@ -299,23 +276,6 @@ export const gameInit = () => {
     normalLevel.addEventListener('click', () => heroSpeed = 150);
     hardLevel.addEventListener('click', () => heroSpeed = 80);
 
-    // needed to toggle content on mobile devices
-    const menuContainer = document.querySelector('.game-menu');
-    const gameContainer = document.querySelector('.game-menu');
-
-    window.addEventListener('resize', () => {
-        // on mobile devices hide game board container, show only menu
-        if (window.innerWidth < 768) {
-            gameContainer.classList.add('disabled');
-            menuContainer.classList.remove('disabled');
-        }
-
-        // show both of them on larger devices
-        else {
-            gameContainer.classList.remove('disabled');
-            menuContainer.classList.remove('disabled');
-        }
-    });
 
     // add click event on button in game menu by which user can start new game
     const newGame = document.querySelector("#newGame-btn");
@@ -333,9 +293,6 @@ export const gameInit = () => {
 
             // starting new game after 3 seconds
             setTimeout(() => {
-
-                // hide menu on mobile devices
-                menuContainer.classList.add('disabled');
 
                 // create game object
                 const game = new Game(heroSpeed);
