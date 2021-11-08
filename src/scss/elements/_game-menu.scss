@@ -91,24 +91,18 @@
     align-items: center;
 
   }
- &__iconAuthors{
+ &__freepik{
    margin-top: 34px;
    text-align: center;
    font-size: 1.063rem;
    color: $color-yellow;
+   padding: 10px;
    div{
      margin: 10px;
    }
    a{
      color: $color-yellow;
    }
- }
- &__freepik{
-   text-align: center;
-   a{
- color: #06d6a0;
-   }
-  
  }
 }
 
