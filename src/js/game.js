@@ -2,6 +2,9 @@ import { Hero } from "./hero";
 import { Thief } from "./thief";
 import { displayingScore } from "./score";
 
+/** value which is responsible for checking the game is still active */
+let isGameActive = false;
+
 /**
  *  class game, which is contains hero, thief, actual score and methods responsible for game logic
  */
@@ -172,17 +175,17 @@ export class Game {
         if (this.hero.position.x < 0 || this.hero.position.x > 9 || this.hero.position.y < 0 || this.hero.position.y > 9) {
 
             // adding scrolling
-
             this.elements.body.style.overflow = "auto";
+
             // animation
             this.elements.gameBoard.classList.add("gameOver");
             setTimeout(() => {
                 this.elements.gameBoard.classList.remove("gameOver");
-            }, 1000)
+            }, 1000);
+
             //end position for hero
             this.hero.position.x = 0;
             this.hero.position.y = 0;
-
 
             // cleaning board
             this.removePreviousThief();
@@ -190,8 +193,7 @@ export class Game {
             // showing elements
             setTimeout(() => {
                 this.elements.btn.style.display = "flex";
-            }, 1000)
-
+            }, 1000);
 
             // adding score to localStorage
             // previous score
@@ -212,6 +214,8 @@ export class Game {
 
             // during the countdown the button text changes so you have to change it after the game ends
             this.elements.btn.innerText = "New Game";
+            isGameActive = false;
+
             //ending game by clearInterval
             clearInterval(this.onPlay);
         }
@@ -245,6 +249,28 @@ export class Game {
         this.elements.btn.style.display = "none"
     }
 
+    mobile() {
+        // needed to toggle content on mobile devices
+        const menuContainer = document.querySelector('.game-menu');
+        const gameContainer = document.querySelector('.game-menu');
+
+        window.addEventListener('resize', () => {
+            // end current game
+
+            // on mobile devices hide game board container, show only menu
+            if (window.innerWidth < 768) {
+
+                gameContainer.classList.add('disabled');
+                menuContainer.classList.remove('disabled');
+            }
+
+            // show both of them on larger devices
+            else {
+                gameContainer.classList.remove('disabled');
+                menuContainer.classList.remove('disabled');
+            }
+        });
+    }
     /**  initialization of game */
     init() {
         this.clearPrevious();
@@ -254,6 +280,7 @@ export class Game {
         this.showThief();
         this.turnHero();
         this.mobileMove();
+        this.mobile();
     }
 }
 
@@ -261,43 +288,74 @@ export class Game {
 /**  adding click event on start button in game menu, by this button can start new game */
 export const gameInit = () => {
 
-    // default hero speed
+    // default hero speed -  difficulty level
     let heroSpeed = 250
 
     // user can choose diffrent difficulty level in menu. Each level has his own hero speed.
     const easyLevel = document.querySelector('.checkboxDifficulty:first-child input');
     const normalLevel = document.querySelector('.checkboxDifficulty:nth-child(2) input');
     const hardLevel = document.querySelector('.checkboxDifficulty:last-child input');
-    easyLevel.addEventListener('click', () => heroSpeed  = 250);
+    easyLevel.addEventListener('click', () => heroSpeed = 250);
     normalLevel.addEventListener('click', () => heroSpeed = 150);
-    hardLevel.addEventListener('click', () => heroSpeed  = 80);
+    hardLevel.addEventListener('click', () => heroSpeed = 80);
 
+    // needed to toggle content on mobile devices
+    const menuContainer = document.querySelector('.game-menu');
+    const gameContainer = document.querySelector('.game-menu');
+
+    window.addEventListener('resize', () => {
+        // on mobile devices hide game board container, show only menu
+        if (window.innerWidth < 768) {
+            gameContainer.classList.add('disabled');
+            menuContainer.classList.remove('disabled');
+        }
+
+        // show both of them on larger devices
+        else {
+            gameContainer.classList.remove('disabled');
+            menuContainer.classList.remove('disabled');
+        }
+    });
 
     // add click event on button in game menu by which user can start new game
-    const newGame = document.querySelector("#newGame-btn")
+    const newGame = document.querySelector("#newGame-btn");
     newGame.addEventListener("click", () => {
 
-        // at first do a countdown
-        newGame.innerText = "Ready";
-        setTimeout(() => {
-            newGame.innerText = "Steady";
-        }, 1000);
-        setTimeout(() => {
-            newGame.innerText = "Go";
-        }, 2000)
+        const action = () => {
+            // at first do a countdown
+            newGame.innerText = "Ready";
+            setTimeout(() => {
+                newGame.innerText = "Steady";
+            }, 1000);
+            setTimeout(() => {
+                newGame.innerText = "Go";
+            }, 2000)
 
+            // starting new game after 3 seconds
+            setTimeout(() => {
 
-        // starting new game after 3 seconds
-        setTimeout(() => {
+                // hide menu on mobile devices
+                menuContainer.classList.add('disabled');
 
-            const game = new Game(heroSpeed);
-            game.init();
+                // create game object
+                const game = new Game(heroSpeed);
+                game.init();
 
-            // controlling hero by keyboard arrows
-            document.addEventListener("keydown", (e) => {
-                game.turnHero(e.key);
-            });
-        }, 3000);
+                // controlling hero by keyboard arrows
+                document.addEventListener("keydown", (e) => {
+                    game.turnHero(e.key);
+                });
+            }, 3000);
+        }
+
+        // prevent of multiple game starts
+        if(isGameActive){
+            console.log('The game has already started');
+        }
+        else {
+            isGameActive = true;
+            return action();
+        }
     });
 }
 
